@@ -15,10 +15,17 @@
           </div>
     </div>
 
-    <div class="row shadow mt-3">
+    <div class="row shadow mt-3" *ngIf="isUrlGenerated || isErrorGenerated">
         <div class="card">
             <div class="card-body">
-                URL : 
+                <div *ngIf="isErrorGenerated">
+                    <div class="alert alert-danger" role="alert">
+                        There was an error. Please enter a valid
+                      </div>
+                </div>
+                <div *ngIf="isUrlGenerated">
+                    Short URL : <a href="{{ originalUrl }}" target="_blank">http://localhost:8080/url/shortener/{{ shortUrl }}</a>
+                </div>
             </div>
         </div>
     </div>

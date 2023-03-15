@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UrlShortenerService } from 'src/app/shared/url-shortener.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +9,33 @@ import { Component } from '@angular/core';
 export class DashboardComponent {
 
   url : string = "";
-
-  constructor() {
+  originalUrl : string = "";
+  shortUrl : string = "";
+  isUrlGenerated : boolean = false;
+  isErrorGenerated : boolean = false;
+  constructor(private urlShortenerService : UrlShortenerService) {
   }
 
   ngOnInit() : void {
+    this.isUrlGenerated = false;
+    this.isErrorGenerated = false;
   }
 
   generateShortUrl() {
-    console.log(this.url);
+    this.urlShortenerService.getShortUrl(this.url).subscribe(res => {
+      if(res==null) {
+        this.isUrlGenerated = false;
+        this.isErrorGenerated = true;
+      } else {
+        this.isErrorGenerated = false;
+        this.shortUrl = res.shortUrl;
+        this.originalUrl = res.originalUrl;
+        this.isUrlGenerated = true;
+      }
+    }, err => {
+      console.log(err);
+      this.isErrorGenerated = true;
+    });
   }
 
 }
