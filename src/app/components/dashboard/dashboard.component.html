@@ -1,7 +1,8 @@
-<div class="container-fluid">
+<div class="container">
 
     <div class="row">
-        <h4 class="text-center text-primary m-3">Short URL</h4>
+        <h2 class="text-center text-primary m-3 mt-4">URL Shortener</h2>
+
     </div>
 
     <div class="row shadow mt-3">
@@ -20,7 +21,7 @@
             <div class="card-body">
                 <div *ngIf="isErrorGenerated">
                     <div class="alert alert-danger" role="alert">
-                        There was an error. Please enter a valid
+                        There was an error. Please enter a valid URL.
                       </div>
                 </div>
                 <div *ngIf="isUrlGenerated">
