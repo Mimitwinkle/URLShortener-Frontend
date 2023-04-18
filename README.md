@@ -4,7 +4,7 @@ This is the front-end for a URL shorenting app. Once a user enters a URL, the ad
 
 View the back-end [here](https://github.com/Mimitwinkle/URLShortener-Backend).
 
-#Built using:
+## Built using:
 <ul>
 <li>Angular</li>
 <li>HTML/CSS</li>
