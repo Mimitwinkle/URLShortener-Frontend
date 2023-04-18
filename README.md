@@ -1,6 +1,15 @@
 # URLShortenerFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+This is the front-end for a URL shorenting app. Once a user enters a URL, the address is stored in a database, and a short URL is created which points to the original URL location. This new, short URL is returned to the user.
+
+View the back-end [here](https://github.com/Mimitwinkle/URLShortener-Backend).
+
+#Built using:
+<ul>
+<li>Angular</li>
+<li>HTML/CSS</li>
+<li>Bootstrap</li>
+</ul>
 
 ## Development server
 
